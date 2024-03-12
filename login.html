@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/login.css">
+    <link rel="stylesheet" href="/assets/css/mediumish.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+.login_form{
+    margin-top: 150px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+.containers {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Other styles for form elements... */
+
+#register-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#register-link p {
+    margin: 0;
+}
+
+#register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#register-link a:hover {
+    text-decoration: underline;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e6eaed;;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c5c9cf;
+}
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation"
+    style="background-color: #ffffff;">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container nav-width" style="width: 100%;">
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <!-- Begin Logo -->
+    
+                <img src="assets/img/p_logo.png" alt="logo" style="width: 110px;">
+        
+            <!-- End Logo -->
+            <!-- Begin Search -->
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+                        <path
+                            d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z">
+                        </path>
+                    </svg></span>
+            </form>
+            <!-- End Search -->
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="createPost.html"><i class="far fa-pen-to-square write"></i>Write<span
+                            class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: rgb(23, 23, 23);" href="story.html">Our Story</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="dropdown-trigger" onclick="toggleDropdown(event)">
+                            <a class="nav-link profile-link" href="#">
+                                <script>
+                                    <!-- Check if user is logged in -->
+                                    function getCookie(cookieName) {
+                                        const cookies = document.cookie.split(';');
+                                        for (let i = 0; i < cookies.length; i++) {
+                                            const cookie = cookies[i].trim(); console.log("Cookie:", cookie); if
+                                                (cookie.startsWith(cookieName + '=')) {
+                                                    return
+                                                decodeURIComponent(cookie.substring(cookieName.length + 1));
+                                            }
+                                        } return null;
+                                    }
+                                    const profileImage = getCookie("profileImage"); 
+                                    console.log(profileImage)
+                                    if (profileImage) { 
+                                        document.write(`<img
+                                    class="profile__" src="${profileImage}" alt="profile">`);
+                                    } else {
+                                    
+                                        document.write(`<img class="profile__" src="/assets/img/profile.webp"
+                                        alt="profile">`);
+                                    }
+                                </script>
+                            </a>
+                        </button>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <a class="signin" href="profile.html">Profile</a>
+                            <a class="signup" href="index.html">Log Out</a>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+
+            <!-- End Menu -->
+
+        </div>
+    </div>
+</nav>
+    <form class="login_form">
+        <div class="containers">
+            <h2>Login</h2>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <button type="submit">Login</button>
+            <div id="register-link">
+                <p>Don't have an account? <a href="registration.html">Register</a></p>
+            </div>
+        </div>
+    </form>
+
+    <!-- Include this script after the previous script in your HTML file -->
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const loginForm = document.querySelector(".login_form");
+
+    loginForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get form data
+        const loginEmail = loginForm.querySelector('input[name="email"]').value;
+        const loginPassword = loginForm.querySelector('input[name="password"]').value;
+
+        // Retrieve stored users array from local storage
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+
+        // Check if entered email and password match stored values
+        const user = users.find(u => u.email === loginEmail);
+
+        if (user && user.password === loginPassword) {
+    // Set cookies with user data
+    document.cookie = "username=" + user.username;
+    document.cookie = "email=" + user.email;
+    document.cookie = "bio=" + user.bio;
+    
+    // Set profileImage cookie if user has a profile image
+    if (user.profileImage) {
+        document.cookie = "profileImage=" + user.profileImage;
+    } else {
+        // Set a default profile image if user does not have a profile image
+        document.cookie = "profileImage/assets/img/default-profile.webp";
+    }
+
+    alert("Login successful!");
+    window.location.href="HomePage.html"
+} else {
+    window.location.href="HomePage.html"
+}
+    });
+});
+
+    </script>
+</body>
+
+
+</html>

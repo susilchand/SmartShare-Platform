@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/mediumish.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .page-wrapper {
+            background-color: #f0f0f0;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-heading {
+            background-color: #c1cbd2;
+            color: #000000;
+            padding: 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+.nav-width{
+    width: 100%;
+}
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-row {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-row .name {
+            width: 120px;
+        }
+
+        .form-row .value {
+            width: 50px;
+            flex: 1;
+        }
+
+        .textarea--style-6 {
+            width: 75%;
+            height: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+
+        .input--style-6 {
+            height: 30px;
+            width: 75%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+
+        .category,
+        .visibility {
+            width: 79%;
+            height: 40px;
+            font-size: 15px;
+        }
+
+
+        .label--file {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .label--desc {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .preview {
+            margin-left: 10px;
+        }
+
+        .preview img {
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 5px;
+        }
+
+        .img-width {
+            width: 80%;
+        }
+
+        .card-footer {
+            text-align: center;
+        }
+        button[type="submit"]{
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid rgb(159, 152, 152);
+        }
+        button[type="submit"]:hover{
+           
+          background: rgb(164, 160, 160);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation"
+    style="background-color: #ffffff;">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container nav-width">
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <!-- Begin Logo -->
+    
+                <img src="assets/img/p_logo.png" alt="logo" style="width: 110px;">
+        
+            <!-- End Logo -->
+            <!-- Begin Search -->
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+                        <path
+                            d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z">
+                        </path>
+                    </svg></span>
+            </form>
+            <!-- End Search -->
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="createPost.html"><i class="far fa-pen-to-square write"></i>Write<span
+                            class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: rgb(23, 23, 23);" href="story.html">Our Story</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="dropdown-trigger" onclick="toggleDropdown(event)">
+                            <a class="nav-link profile-link" href="#">
+                                <script>
+                                    <!-- Check if user is logged in -->
+                                    function getCookie(cookieName) {
+                                        const cookies = document.cookie.split(';');
+                                        for (let i = 0; i < cookies.length; i++) {
+                                            const cookie = cookies[i].trim(); console.log("Cookie:", cookie); if
+                                                (cookie.startsWith(cookieName + '=')) {
+                                                    return
+                                                decodeURIComponent(cookie.substring(cookieName.length + 1));
+                                            }
+                                        } return null;
+                                    }
+                                    const profileImage = getCookie("profileImage"); 
+                                    console.log(profileImage)
+                                    if (profileImage) { 
+                                        document.write(`<img
+                                    class="profile__" src="${profileImage}" alt="profile">`);
+                                    } else {
+                                    
+                                        document.write(`<img class="profile__" src="/assets/img/profile.webp"
+                                        alt="profile">`);
+                                    }
+                                </script>
+                            </a>
+                        </button>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <a class="signin" href="profile.html">Profile</a>
+                            <a class="signup" href="index.html">Log Out</a>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+
+            <!-- End Menu -->
+
+        </div>
+    </div>
+</nav>
+    <div class="page-wrapper bg-dark p-t-100 p-b-50">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-6">
+                <div class="card-heading">
+                    <h2 class="title">Create New Blog</h2>
+                </div>
+                <div class="card-body">
+                    <form  id="updateStoryForm" class="myform" >
+                        <div class="form-row">
+                            <div class="name">Category</div>
+                            <div class="value">
+                                <select id="category" class="input--style-6 category">
+                                    <option value="Psychology">Psychology</option>
+                                    <option value="Food">Food</option>
+                                    <option value="Business">Business</option>
+                                    <option value="Programming">Programming</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Health">Health</option>
+                                    <option value="Media">Media</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Title</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input id="title" class="input--style-6" type="text" name="Title" placeholder="Type the title of your blog here" required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Content</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <textarea id="description" class="textarea--style-6" name="Body" placeholder="Type the body of your blog here"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Visibility</div>
+                            <div class="value">
+                                <select id="visibility" class="input--style-6 visibility">
+                                    <option value="public">Public</option>
+                                    <option value="private">Private</option>
+                                </select>
+                            </div>
+                        </div>
+                     
+                        <div class="card-footer" style="background-color: transparent; border: none;">
+                            <button class="my-btn" type="submit">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+        var storedStories = localStorage.getItem("stories");
+        var storiesData = storedStories ? JSON.parse(storedStories) : [];
+        
+        // Get the index of the story to update from URL parameter
+        var urlParams = new URLSearchParams(window.location.search);
+        var storyId = urlParams.get("id");
+        console.log("Story ID:", storyId);
+    
+        var storyToUpdateIndex = storiesData.findIndex(function (story) {
+            return story.id === Number(storyId); // Convert storyId to a number before comparison
+        });
+    
+        // Pre-fill form fields with story details
+        if (storyToUpdateIndex !== -1) {
+            var storyToUpdate = storiesData[storyToUpdateIndex];
+            document.getElementById("title").value = storyToUpdate.title;
+            document.getElementById("description").value = storyToUpdate.description;
+            document.getElementById("storyImgUrl").value = storyToUpdate.storyImgUrl;
+            document.getElementById("category").value = storyToUpdate.category;
+        }
+    
+        // Update story form submission
+        document.getElementsById("updateStoryForm").addEventListener("submit", function (event) {
+    event.preventDefault(); 
+            // Prevent form submission
+    console.log("hello");
+            // Get form values
+            // var title = document.getElementById("title").value;
+            // var description = document.getElementById("description").value;
+            // var storyImgUrl = document.getElementById("storyImgUrl").value;
+            // var category = document.getElementById("category").value;
+            // console.log(title + description + storyImgUrl + category);
+    
+            // Update story details in the storiesData array
+            // if (storyToUpdateIndex !== -1) {
+            //     storiesData[storyToUpdateIndex].title = title;
+            //     storiesData[storyToUpdateIndex].description = description;
+            //     storiesData[storyToUpdateIndex].storyImgUrl = storyImgUrl;
+            //     storiesData[storyToUpdateIndex].category = category;
+    
+            //     // Update localStorage with the updated storiesData array
+            //     localStorage.setItem("stories", JSON.stringify(storiesData));
+    
+            //     // Optionally, you can provide feedback to the user that the story has been updated
+            //     alert("Story updated successfully!");
+            // } else {
+            //     // Handle case where story with given ID is not found
+            //     alert("Story not found for update.");
+            // }
+        });
+  
+</script>
+
+</body>
+</html>

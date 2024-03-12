@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Retrieve data from local storage
+        var storedStories = localStorage.getItem("stories");
+        var storiesData = storedStories ? JSON.parse(storedStories) : [];
+    
+        // Display stories
+        var storyList = document.getElementById("storyList"); // Make sure you have an element with id "storyList"
+    
+        storiesData.forEach(function (story) {
+            var storyCard = document.createElement("div");
+            storyCard.classList.add("story-card");
+    
+            var image = document.createElement("img");
+            image.src = story.storyImgUrl;
+            image.alt = "Story Image";
+            image.classList.add("story-image");
+    
+            var title = document.createElement("h3");
+            title.textContent = story.title;
+    
+            var description = document.createElement("p");
+            description.textContent = story.description;
+    
+            var deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.classList.add("delete-btn");
+    
+            storyCard.appendChild(image);
+            storyCard.appendChild(title);
+            storyCard.appendChild(description);
+            storyCard.appendChild(deleteButton);
+    
+            storyList.appendChild(storyCard);
+    
+            // Add event listener for delete button
+            deleteButton.addEventListener("click", function () {
+                // Find index of the story to delete
+                var index = storiesData.indexOf(story);
+                if (index !== -1) {
+                    // Remove the story from the array
+                    storiesData.splice(index, 1);
+                    // Update local storage
+                    localStorage.setItem("stories", JSON.stringify(storiesData));
+                    // Remove the story card from the DOM
+                    storyList.removeChild(storyCard);
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

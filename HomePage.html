@@ -1,0 +1,2752 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="assets/img/favicon.ico">
+	<title>Mediumish - A Medium style template by WowThemes.net</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<!-- Bootstrap core CSS -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Fonts -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="assets/css/mediumish.css" rel="stylesheet">
+	<style>
+		.category-bar-container {
+			margin: 0 auto;
+			position: relative;
+			width: 100%;
+			overflow: hidden;
+			border-bottom: 1px solid rgb(221, 212, 212);
+
+		}
+
+
+
+		.category-bar-wrapper {
+			padding: 0 50px;
+			overflow-x: hidden;
+			white-space: nowrap;
+		}
+
+		.category-bar {
+			display: inline-flex;
+			padding: 10px 0;
+		}
+
+		.category-item {
+			padding: 10px 20px;
+			margin-right: 10px;
+			cursor: pointer;
+			white-space: nowrap;
+		}
+
+		.category-item:hover {
+			background-color: #ddd;
+		}
+
+		.arrow {
+
+
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 50px;
+			height: 50px;
+			background: #ffffff;
+			color: #000000;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: 1;
+			transition: opacity 0.3s ease-in-out;
+
+		}
+
+		.dropdown-content {
+			bottom: -131px;
+		}
+
+		.arrow.left {
+			left: 0;
+		}
+
+		.arrow.right {
+			right: 0;
+		}
+
+		.hidden {
+			opacity: 0;
+		}
+
+		#foryou {
+			display: block;
+		}
+
+		#following {
+			display: none;
+		}
+
+		#psychology {
+			display: none;
+		}
+
+		#food {
+			display: none;
+		}
+
+		#business {
+			display: none;
+		}
+
+		#programming {
+			display: none;
+		}
+
+		#education {
+			display: none;
+		}
+
+		#health {
+			display: none;
+		}
+
+		#media {
+			display: none;
+		}
+	</style>
+</head>
+
+<body style="height: 100%;">
+
+	<!-- Begin Nav
+================================================== -->
+	<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation"
+		style="background-color: #ffffff;">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+			data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="container nav-width">
+
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<!-- Begin Logo -->
+		
+					<img src="assets/img/p_logo.png" alt="logo" style="width: 110px;">
+			
+				<!-- End Logo -->
+				<!-- Begin Search -->
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="text" placeholder="Search">
+					<span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+							<path
+								d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z">
+							</path>
+						</svg></span>
+				</form>
+				<!-- End Search -->
+			</div>
+
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<!-- Begin Menu -->
+
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="createPost.html"><i class="far fa-pen-to-square write"></i>Write<span
+								class="sr-only"></span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" style="color: rgb(23, 23, 23);" href="story.html">Our Story</a>
+					</li>
+					<li class="nav-item">
+						<div class="dropdown">
+							<button class="dropdown-trigger" onclick="toggleDropdown(event)">
+								<a class="nav-link profile-link" href="#">
+									<script>
+										<!-- Check if user is logged in -->
+										function getCookie(cookieName) {
+											const cookies = document.cookie.split(';');
+											for (let i = 0; i < cookies.length; i++) {
+												const cookie = cookies[i].trim(); console.log("Cookie:", cookie); if
+													(cookie.startsWith(cookieName + '=')) {
+														return
+													decodeURIComponent(cookie.substring(cookieName.length + 1));
+												}
+											} return null;
+										}
+										const profileImage = getCookie("profileImage"); 
+										console.log(profileImage)
+										if (profileImage) { 
+											document.write(`<img
+										class="profile__" src="${profileImage}" alt="profile">`);
+										} else {
+										
+											document.write(`<img class="profile__" src="/assets/img/profile.webp"
+											alt="profile">`);
+										}
+									</script>
+								</a>
+							</button>
+							<div class="dropdown-content" id="dropdownContent">
+								<a class="signin" href="profile.html">Profile</a>
+								<a class="signup" href="index.html">Log Out</a>
+							</div>
+						</div>
+					</li>
+
+				</ul>
+
+
+				<!-- End Menu -->
+
+			</div>
+		</div>
+	</nav>
+	<!-- End Nav
+================================================== -->
+
+	<div class="main-container" style="height: 100%;">
+		<!--Start Left Section
+================================================== -->
+		<section class="left-sec">
+			<div style="position: fixed; width: 56%; background: #ffffff; top: 68px;">
+				<div class="category-bar-container">
+
+					<div class="arrow left">&#10094;</div>
+					<div class="category-bar-wrapper">
+						<div class="category-bar">
+							<div onclick="showContent('foryou')" class="category-item">For you</div>
+
+							<div onclick="showContent('psychology')" class="category-item">Psychology</div>
+							<div onclick="showContent('food')" class="category-item">Food</div>
+							<div onclick="showContent('business')" class="category-item">Business</div>
+							<div onclick="showContent('programming')" class="category-item">Programming</div>
+							<div onclick="showContent('education')" class="category-item">Education</div>
+							<div onclick="showContent('health')" class="category-item">Health</div>
+							<div onclick="showContent('media')" class="category-item">Media</div>
+
+						</div>
+					</div>
+					<div class="arrow right">&#10095;</div>
+				</div>
+			</div>
+
+			<div style="margin-top: 100px;">
+
+				<!-- begin post -->
+				<div class="cat_content_    " id="foryou">
+					
+					<div class=" mmm"></div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Psychology/psychology3.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Understanding Human Behavior</a></h2>
+								<h4 class="post-des">Exploring the intricacies of human behavior and psychology. It\'s fascinating how our minds work and influence our actions. Join me in this exploration as we delve into various theories and studies that shed light on the complexities of human behavior. From cognitive psychology to social psychology, there\'s so much to learn and understand about what drives us as individuals and as a society.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Food/food1.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Delicious Pasta Recipe</a></h2>
+								<h4 class="post-des">Check out this amazing pasta recipe I tried! It was absolutely delicious and packed with flavor. I highly recommend giving it a try if you love pasta as much as I do. The ingredients are simple, and the instructions are easy to follow. Let me know what you think!</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Health/health1.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">The Importance of Mental Health</a></h2>
+								<h4 class="post-des">Exploring the importance of mental health and well-being. Mental health is essential for overall wellness and quality of life. Join me in discussing various aspects of mental health, including stress management, self-care practices, and seeking professional support when needed</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="">
+								<a href="">
+									<img class="post-img" src="/Project Images/Health/health2.jpg" alt="post-img">
+								</a>
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Benefits of Regular Exercise</a></h2>
+								<h4 class="post-des">Delving into the numerous benefits of regular exercise for physical and mental health. From improving cardiovascular health and boosting mood to reducing stress and anxiety, exercise plays a crucial role in maintaining overall well-being. Join me in exploring different forms of exercise and incorporating physical activity into our daily routines.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="">
+								<a href="">
+									<img class="post-img" src="/Project Images/Health/health3.jpg" alt="post-img">
+								</a>
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Nutrition and Wellness</a></h2>
+								<h4 class="post-des">Understanding the importance of nutrition for overall health and wellness. A balanced diet rich in nutrients is essential for supporting our bodies' functions and maintaining optimal health. Join me in discussing nutrition tips, healthy eating habits, and the impact of diet on our well-being.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="">
+								<a href="">
+									<img class="post-img" src="/Project Images/Health/health4.jpg" alt="post-img">
+								</a>
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Mindful Eating Practices</a></h2>
+								<h4 class="post-des">Exploring mindful eating practices and their benefits for physical and mental health. Mindful eating involves paying attention to the sensory experience of eating and being present in the moment. Join me in learning how to cultivate mindful eating habits and develop a healthier relationship with food.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="">
+								<a href="">
+									<img class="post-img" src="/Project Images/Health/health5.jpg" alt="post-img">
+								</a>
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Managing Chronic Stress</a></h2>
+								<h4 class="post-des">Delving into strategies for managing chronic stress and promoting resilience. Chronic stress can have detrimental effects on physical and mental health. Join me in exploring stress management techniques, relaxation practices, and lifestyle changes to cope with and reduce chronic stress</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Food/food2.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Best Pizza in Town</a></h2>
+								<h4 class="post-des">I recently found the best pizza place in the neighborhood! The pizza was so delicious and authentic. The crust was perfectly crispy, and the toppings were fresh and flavorful. I highly recommend trying it out if you\'re a pizza lover like me. It\'s definitely worth it!</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Food/food3.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Homemade Pancakes</a></h2>
+								<h4 class="post-des">I made some homemade pancakes this morning, and they turned out amazing! They were light, fluffy, and oh-so-delicious. I used a simple pancake recipe with basic ingredients like flour, eggs, milk, and baking powder. These pancakes are perfect for breakfast or brunch. Give them a try!</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Education/education1.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">The Importance of Lifelong Learning</a></h2>
+								<h4 class="post-des">Exploring the importance of lifelong learning in today\'s rapidly changing world. Lifelong learning is essential for personal and professional growth, enabling individuals to adapt to new technologies, industries, and challenges. Join me in discussing the benefits of lifelong learning and strategies for continuous education.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Education/education2.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Online Learning Platforms</a></h2>
+								<h4 class="post-des">This is a longer card with supporting text below as a natural
+									lead-in
+									to
+									additionalThis is a longer card with supporting text below as a natural lead-in to
+									additionalDelving into the world of online learning platforms and resources. With the rise of e-learning, there are numerous platforms like Coursera, Udemy, and Khan Academy offering a wide range of courses and resources for learners worldwide. Join me in exploring online learning opportunities and leveraging digital platforms for education.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Education/education3.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Innovative Teaching Methods</a></h2>
+								<h4 class="post-des">Exploring innovative teaching methods and pedagogical approaches to engage students and enhance learning outcomes. From project-based learning to flipped classrooms, there are various strategies that educators can employ to create dynamic and interactive learning experiences. Join me in discovering innovative teaching methods and transforming education.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Education/education4.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">The Future of Education Technology</a></h2>
+								<h4 class="post-des">Delving into the future of education technology and its impact on teaching and learning. Technology has transformed the way we access information, collaborate, and learn. Join me in discussing emerging trends in educational technology and their implications for the future of education.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Education/education5.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Global Education Trends</a></h2>
+								<h4 class="post-des">Exploring global education trends and initiatives to promote inclusive and quality education for all. Education is a fundamental human right and key to achieving sustainable development goals. Join me in discussing global education trends and advocating for equitable access to education worldwide.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Food/food4.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Healthy Salad Ideas'</a></h2>
+								<h4 class="post-des">Looking for some healthy salad ideas? Look no further! Here are some nutritious salad recipes that are perfect for a healthy lifestyle. These salads are packed with fresh veggies, protein, and delicious dressings. They\'re easy to make and great for lunch or dinner. Give them a try!</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Food/food5.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Sushi Night</a></h2>
+								<h4 class="post-des">Join us for a sushi night and explore various sushi rolls! From classic California rolls to adventurous specialty rolls, there\'s something for everyone to enjoy. Our sushi chefs use only the freshest ingredients to create delicious and visually stunning sushi dishes. Come join us for a culinary experience you won\'t forget!</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Psychology/psychology4.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Coping with Stress</a></h2>
+								<h4 class="post-des">In today\'s fast-paced world, stress is inevitable. Let\'s discuss effective ways to cope with stress and maintain mental well-being. Whether it\'s through mindfulness practices, relaxation techniques, or seeking professional help, there are numerous strategies available to help us navigate through challenging times. Together, we can explore these options and find what works best for managing stress in our lives.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Psychology/psychology2.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">The Power of Positive Thinking</a></h2>
+								<h4 class="post-des">Unlock the power of positive thinking and its impact on mental health. Positive thoughts can lead to a more fulfilling and optimistic life journey. By focusing on the bright side of situations and cultivating a positive mindset, we can improve our overall well-being and resilience. Join me in exploring the science behind positive thinking and incorporating it into our daily lives for a happier and healthier mindset.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Programming/programming1.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Introduction to Python Programming</a></h2>
+								<h4 class="post-des">Exploring the fundamentals of Python programming language. Python is a versatile and beginner-friendly language widely used for web development, data analysis, artificial intelligence, and more. Join me in learning the basics of Python programming and kickstarting your journey into the world of coding.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Programming/programming2.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Web Development Technologies</a></h2>
+								<h4 class="post-des">Delving into the latest web development technologies and frameworks. From front-end libraries like React and Vue.js to back-end frameworks like Django and Node.js, there are numerous tools available for building modern web applications. Join me in exploring the exciting world of web development and mastering the technologies that power the web.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Programming/programming3.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Data Science Essentials</a></h2>
+								<h4 class="post-des">Understanding the essentials of data science and analytics. Data science is an interdisciplinary field that combines programming, statistics, and domain knowledge to extract insights from data. Join me in exploring data science concepts, tools, and techniques for solving real-world problems.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Programming/programming4.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Mobile App Development</a></h2>
+								<h4 class="post-des">Exploring the world of mobile app development. With the rise of smartphones, mobile app development has become a lucrative field with endless possibilities. Join me in learning about mobile app development frameworks, UI/UX design principles, and best practices for creating successful mobile applications.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Programming/programming5.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Machine Learning Fundamentals</a></h2>
+								<h4 class="post-des">Delving into the fundamentals of machine learning and artificial intelligence. Machine learning algorithms enable computers to learn from data and make predictions or decisions without being explicitly programmed. Join me in understanding the principles of machine learning and exploring its applications across various industries.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Psychology/psychology1.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Overcoming Anxiety</a></h2>
+								<h4 class="post-des">Anxiety can be challenging, but there are practical strategies to overcome it. Let\'s explore techniques to manage and conquer anxiety together. From cognitive-behavioral therapy to mindfulness practices, we can learn how to reframe our thoughts, confront our fears, and develop coping mechanisms that empower us to live a life free from the grips of anxiety. Together, we can overcome anxiety and thrive in all aspects of our lives.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Business/business5.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Startup Success Strategies</a></h2>
+								<h4 class="post-des">Exploring the keys to startup success in today\'s competitive business landscape. From developing a solid business plan to building a strong team and executing effective marketing strategies, startups face numerous challenges on their journey to success. Join me as we delve into the strategies and insights that can help startups thrive and grow.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Business/business1.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Navigating the Stock Market</a></h2>
+								<h4 class="post-des">Understanding the complexities of the stock market and navigating through its ups and downs can be daunting. Let\'s explore strategies for investing wisely and managing risks in the stock market. Whether you\'re a beginner investor or seasoned trader, there\'s always something new to learn in the ever-evolving world of finance and investments.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Business/business2.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Effective Leadership Skills</a></h2>
+								<h4 class="post-des">Unlocking the secrets to effective leadership and management in the business world. From communication and decision-making to conflict resolution and team building, strong leadership skills are essential for driving organizational success. Join me in exploring the traits and practices of successful leaders and enhancing your own leadership abilities.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Business/business3.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Digital Marketing Trends</a></h2>
+								<h4 class="post-des">Exploring the latest trends and strategies in digital marketing for businesses. In today\'s digital age, businesses must stay ahead of the curve by leveraging digital channels and technologies to reach their target audience effectively. Let\'s dive into the world of digital marketing and discover innovative approaches to driving growth and engagement for your business.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Business/business4.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Strategic Business Planning</a></h2>
+								<h4 class="post-des">Delving into the importance of strategic business planning for long-term success. A well-defined business strategy lays the foundation for growth and sustainability in today\'s competitive business environment. Join me as we explore the key elements of strategic planning and develop actionable strategies to achieve your business goals.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Psychology/boost.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Exploring Mindfulness</a></h2>
+								<h4 class="post-des">Delving into the practice of mindfulness and its positive effects on mental health. Discover the benefits of being present in the moment and cultivating mindfulness in our daily lives. From reducing stress and anxiety to enhancing focus and emotional regulation, mindfulness offers a myriad of benefits for our overall well-being. Join me in exploring mindfulness practices and incorporating them into our daily routines for a more mindful and fulfilling life.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end post -->
+
+				<!-- begin post -->
+				<div class="cat_content_" id="psychology">
+
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Psychology/psychology3.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Understanding Human Behavior</a></h2>
+								<h4 class="post-des">Exploring the intricacies of human behavior and psychology. It\'s fascinating how our minds work and influence our actions. Join me in this exploration as we delve into various theories and studies that shed light on the complexities of human behavior. From cognitive psychology to social psychology, there\'s so much to learn and understand about what drives us as individuals and as a society.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Psychology/psychology4.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Coping with Stress</a></h2>
+								<h4 class="post-des">In today\'s fast-paced world, stress is inevitable. Let\'s discuss effective ways to cope with stress and maintain mental well-being. Whether it\'s through mindfulness practices, relaxation techniques, or seeking professional help, there are numerous strategies available to help us navigate through challenging times. Together, we can explore these options and find what works best for managing stress in our lives.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Psychology/psychology2.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">The Power of Positive Thinking</a></h2>
+								<h4 class="post-des">Unlock the power of positive thinking and its impact on mental health. Positive thoughts can lead to a more fulfilling and optimistic life journey. By focusing on the bright side of situations and cultivating a positive mindset, we can improve our overall well-being and resilience. Join me in exploring the science behind positive thinking and incorporating it into our daily lives for a happier and healthier mindset.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Psychology/psychology1.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Overcoming Anxiety</a></h2>
+								<h4 class="post-des">Anxiety can be challenging, but there are practical strategies to overcome it. Let\'s explore techniques to manage and conquer anxiety together. From cognitive-behavioral therapy to mindfulness practices, we can learn how to reframe our thoughts, confront our fears, and develop coping mechanisms that empower us to live a life free from the grips of anxiety. Together, we can overcome anxiety and thrive in all aspects of our lives.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Psychology/boost.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Exploring Mindfulness</a></h2>
+								<h4 class="post-des">Delving into the practice of mindfulness and its positive effects on mental health. Discover the benefits of being present in the moment and cultivating mindfulness in our daily lives. From reducing stress and anxiety to enhancing focus and emotional regulation, mindfulness offers a myriad of benefits for our overall well-being. Join me in exploring mindfulness practices and incorporating them into our daily routines for a more mindful and fulfilling life.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end post -->
+				<!-- begin post -->
+				<div class="cat_content_" id="food">
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Food/food1.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Delicious Pasta Recipe</a></h2>
+								<h4 class="post-des">Check out this amazing pasta recipe I tried! It was absolutely delicious and packed with flavor. I highly recommend giving it a try if you love pasta as much as I do. The ingredients are simple, and the instructions are easy to follow. Let me know what you think!</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Food/food2.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Best Pizza in Town</a></h2>
+								<h4 class="post-des">I recently found the best pizza place in the neighborhood! The pizza was so delicious and authentic. The crust was perfectly crispy, and the toppings were fresh and flavorful. I highly recommend trying it out if you\'re a pizza lover like me. It\'s definitely worth it!</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Food/food3.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Homemade Pancakes</a></h2>
+								<h4 class="post-des">I made some homemade pancakes this morning, and they turned out amazing! They were light, fluffy, and oh-so-delicious. I used a simple pancake recipe with basic ingredients like flour, eggs, milk, and baking powder. These pancakes are perfect for breakfast or brunch. Give them a try!</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Food/food4.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Healthy Salad Ideas'</a></h2>
+								<h4 class="post-des">Looking for some healthy salad ideas? Look no further! Here are some nutritious salad recipes that are perfect for a healthy lifestyle. These salads are packed with fresh veggies, protein, and delicious dressings. They\'re easy to make and great for lunch or dinner. Give them a try!</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Food/food5.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Sushi Night</a></h2>
+								<h4 class="post-des">Join us for a sushi night and explore various sushi rolls! From classic California rolls to adventurous specialty rolls, there\'s something for everyone to enjoy. Our sushi chefs use only the freshest ingredients to create delicious and visually stunning sushi dishes. Come join us for a culinary experience you won\'t forget!</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end post -->
+				<!-- begin post -->
+				<div class="cat_content_" id="business">
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Business/business5.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Startup Success Strategies</a></h2>
+								<h4 class="post-des">Exploring the keys to startup success in today\'s competitive business landscape. From developing a solid business plan to building a strong team and executing effective marketing strategies, startups face numerous challenges on their journey to success. Join me as we delve into the strategies and insights that can help startups thrive and grow.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Business/business1.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Navigating the Stock Market</a></h2>
+								<h4 class="post-des">Understanding the complexities of the stock market and navigating through its ups and downs can be daunting. Let\'s explore strategies for investing wisely and managing risks in the stock market. Whether you\'re a beginner investor or seasoned trader, there\'s always something new to learn in the ever-evolving world of finance and investments.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Business/business2.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Effective Leadership Skills</a></h2>
+								<h4 class="post-des">Unlocking the secrets to effective leadership and management in the business world. From communication and decision-making to conflict resolution and team building, strong leadership skills are essential for driving organizational success. Join me in exploring the traits and practices of successful leaders and enhancing your own leadership abilities.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Business/business3.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Digital Marketing Trends</a></h2>
+								<h4 class="post-des">Exploring the latest trends and strategies in digital marketing for businesses. In today\'s digital age, businesses must stay ahead of the curve by leveraging digital channels and technologies to reach their target audience effectively. Let\'s dive into the world of digital marketing and discover innovative approaches to driving growth and engagement for your business.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Business/business4.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Strategic Business Planning</a></h2>
+								<h4 class="post-des">Delving into the importance of strategic business planning for long-term success. A well-defined business strategy lays the foundation for growth and sustainability in today\'s competitive business environment. Join me as we explore the key elements of strategic planning and develop actionable strategies to achieve your business goals.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end post -->
+				<!-- begin post -->
+				<div class="cat_content_" id="programming">
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Programming/programming1.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Introduction to Python Programming</a></h2>
+								<h4 class="post-des">Exploring the fundamentals of Python programming language. Python is a versatile and beginner-friendly language widely used for web development, data analysis, artificial intelligence, and more. Join me in learning the basics of Python programming and kickstarting your journey into the world of coding.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Programming/programming2.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Web Development Technologies</a></h2>
+								<h4 class="post-des">Delving into the latest web development technologies and frameworks. From front-end libraries like React and Vue.js to back-end frameworks like Django and Node.js, there are numerous tools available for building modern web applications. Join me in exploring the exciting world of web development and mastering the technologies that power the web.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Programming/programming3.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Data Science Essentials</a></h2>
+								<h4 class="post-des">Understanding the essentials of data science and analytics. Data science is an interdisciplinary field that combines programming, statistics, and domain knowledge to extract insights from data. Join me in exploring data science concepts, tools, and techniques for solving real-world problems.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Programming/programming4.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Mobile App Development</a></h2>
+								<h4 class="post-des">Exploring the world of mobile app development. With the rise of smartphones, mobile app development has become a lucrative field with endless possibilities. Join me in learning about mobile app development frameworks, UI/UX design principles, and best practices for creating successful mobile applications.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Programming/programming5.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Machine Learning Fundamentals</a></h2>
+								<h4 class="post-des">Delving into the fundamentals of machine learning and artificial intelligence. Machine learning algorithms enable computers to learn from data and make predictions or decisions without being explicitly programmed. Join me in understanding the principles of machine learning and exploring its applications across various industries.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end post -->
+				<!-- begin post -->
+				<div class="cat_content_" id="education">
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Education/education1.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">The Importance of Lifelong Learning</a></h2>
+								<h4 class="post-des">Exploring the importance of lifelong learning in today\'s rapidly changing world. Lifelong learning is essential for personal and professional growth, enabling individuals to adapt to new technologies, industries, and challenges. Join me in discussing the benefits of lifelong learning and strategies for continuous education.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Education/education2.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Online Learning Platforms</a></h2>
+								<h4 class="post-des">This is a longer card with supporting text below as a natural
+									lead-in
+									to
+									additionalThis is a longer card with supporting text below as a natural lead-in to
+									additionalDelving into the world of online learning platforms and resources. With the rise of e-learning, there are numerous platforms like Coursera, Udemy, and Khan Academy offering a wide range of courses and resources for learners worldwide. Join me in exploring online learning opportunities and leveraging digital platforms for education.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Education/education3.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Innovative Teaching Methods</a></h2>
+								<h4 class="post-des">Exploring innovative teaching methods and pedagogical approaches to engage students and enhance learning outcomes. From project-based learning to flipped classrooms, there are various strategies that educators can employ to create dynamic and interactive learning experiences. Join me in discovering innovative teaching methods and transforming education.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Education/education4.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">The Future of Education Technology</a></h2>
+								<h4 class="post-des">Delving into the future of education technology and its impact on teaching and learning. Technology has transformed the way we access information, collaborate, and learn. Join me in discussing emerging trends in educational technology and their implications for the future of education.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Education/education5.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Global Education Trends</a></h2>
+								<h4 class="post-des">Exploring global education trends and initiatives to promote inclusive and quality education for all. Education is a fundamental human right and key to achieving sustainable development goals. Join me in discussing global education trends and advocating for equitable access to education worldwide.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- end post -->
+				<!-- begin post -->
+				<div class="cat_content_" id="health">
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Health/health1.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">The Importance of Mental Health</a></h2>
+								<h4 class="post-des">Exploring the importance of mental health and well-being. Mental health is essential for overall wellness and quality of life. Join me in discussing various aspects of mental health, including stress management, self-care practices, and seeking professional support when needed</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="">
+								<a href="">
+									<img class="post-img" src="/Project Images/Health/health2.jpg" alt="post-img">
+								</a>
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Benefits of Regular Exercise</a></h2>
+								<h4 class="post-des">Delving into the numerous benefits of regular exercise for physical and mental health. From improving cardiovascular health and boosting mood to reducing stress and anxiety, exercise plays a crucial role in maintaining overall well-being. Join me in exploring different forms of exercise and incorporating physical activity into our daily routines.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="">
+								<a href="">
+									<img class="post-img" src="/Project Images/Health/health3.jpg" alt="post-img">
+								</a>
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Nutrition and Wellness</a></h2>
+								<h4 class="post-des">Understanding the importance of nutrition for overall health and wellness. A balanced diet rich in nutrients is essential for supporting our bodies' functions and maintaining optimal health. Join me in discussing nutrition tips, healthy eating habits, and the impact of diet on our well-being.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="">
+								<a href="">
+									<img class="post-img" src="/Project Images/Health/health4.jpg" alt="post-img">
+								</a>
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Mindful Eating Practices</a></h2>
+								<h4 class="post-des">Exploring mindful eating practices and their benefits for physical and mental health. Mindful eating involves paying attention to the sensory experience of eating and being present in the moment. Join me in learning how to cultivate mindful eating habits and develop a healthier relationship with food.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="">
+								<a href="">
+									<img class="post-img" src="/Project Images/Health/health5.jpg" alt="post-img">
+								</a>
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Managing Chronic Stress</a></h2>
+								<h4 class="post-des">Delving into strategies for managing chronic stress and promoting resilience. Chronic stress can have detrimental effects on physical and mental health. Join me in exploring stress management techniques, relaxation practices, and lifestyle changes to cope with and reduce chronic stress</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- end post -->
+				<!-- begin post -->
+				<div class="cat_content_" id="media">
+					<div class="post-flex">
+						<div>
+							<a href="/post.html">
+								<img class="post-img" src="/Project Images/Media/media1.jpg" alt="post-img">
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">The Impact of Social Media</a></h2>
+								<h4 class="post-des">Exploring the impact of social media on society and individuals. Social media has revolutionized the way we communicate, connect, and share information. Join me in exploring the positive and negative effects of social media on our mental health, relationships, and society as a whole</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="">
+								<a href="">
+									<img class="post-img" src="/Project Images/Media/media2.jpg" alt="post-img">
+								</a>
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Digital Content Creation</a></h2>
+								<h4 class="post-des">Delving into the world of digital content creation and storytelling. From videos and podcasts to blog posts and social media content, digital creators play a vital role in shaping online narratives. Join me in exploring the art of digital storytelling and creating engaging content that resonates with audiences.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="">
+								<a href="">
+									<img class="post-img" src="/Project Images/Media/media3.jpg" alt="post-img">
+								</a>
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Media Literacy Skills</a></h2>
+								<h4 class="post-des">Understanding the importance of media literacy skills in today\'s digital age. With the abundance of information available online, it\'s crucial to develop critical thinking skills to evaluate media sources and separate fact from fiction. Join me in enhancing our media literacy skills and becoming informed and responsible consumers of media</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="">
+								<a href="">
+									<img class="post-img" src="/Project Images/Media/media4.jpg" alt="post-img">
+								</a>
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Influencer Marketing Trends</a></h2>
+								<h4 class="post-des">Exploring the latest trends and strategies in influencer marketing. In today\'s digital landscape, influencers have become powerful voices for brands, shaping consumer behavior and driving engagement. Join me in uncovering the secrets to successful influencer marketing campaigns and leveraging influencer partnerships for business growth.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/man.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Steve</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="post-flex">
+						<div>
+							<a href="">
+								<a href="">
+									<img class="post-img" src="/Project Images/Media/media5.jpg" alt="post-img">
+								</a>
+							</a>
+						</div>
+						<div>
+							<div class="all-one-post">
+								<h2><a href="post.html" class="post-title">Podcasting 101'</a></h2>
+								<h4 class="post-des">Delving into the world of podcasting and its rising popularity as a form of digital media. From content creation and hosting to distribution and promotion, there\'s a lot to learn about launching and growing a successful podcast. Join me in exploring the ins and outs of podcasting and unleashing your creativity in the audio realm.</h4>
+								<div class="fav-pic-flex">
+									<div class="profile-pic-flex">
+										<div>
+											<a href="author.html"><img class="profile-img"
+													src="/Project Images/Food/woman.jpg"></a>
+										</div>
+										<div>
+											<a href="author.html">Su Su</a><br><i class="fa-solid fa-earth-americas"
+												style="color: rgb(174, 164, 164);"></i> <span class="timestamp">
+												2.17.2024
+											</span> <span class="minRead">
+
+											</span>
+										</div>
+									</div>
+									<div><a href="post.html" title="Read Story"><i id="bookmarkIcon"
+												class="far fa-bookmark fav_"></i></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- end post -->
+			</div>
+
+
+
+		</section>
+		<!--End Left Section
+================================================== -->
+
+		<!-- Began Right Section
+================================================== -->
+<section class="right-sec">
+    <div class="right-container">
+        <h5 class="right-title" style="margin-left: 25px;">Recommended People </h5>
+
+        <div class="fav-pic-flexs" style="display: flex; flex-direction: column; margin-left: 65px;">
+            <!-- JavaScript will dynamically generate profile elements here -->
+        </div>
+
+        <div class="reading_seggestion" style="margin-left: 25px; margin-top: 20px; border: 1px solid rgb(232, 226, 226);">
+            <h5 class="right-title">Reading list </h5>
+            <p style="margin-left: 45px; font-weight: 500; color: #605e5e;">Click the <i id="bookmarkIcon" class="far fa-bookmark fav_" style="margin: 0 5px; margin-top: 0px;"></i> on any story to easily add it to your reading list</p>
+        </div>
+    </div>
+
+    <!-- Start Footer -->
+    <div class="footer">
+        <div class="clearfix">
+            <a href="">Help</a>
+            <a href="">About</a>
+            <a href="">Careers</a>
+            <a href="">Blog</a>
+            <a href="">Privacy</a>
+            <a href="">Terms</a>
+        </div>
+    </div>
+    <!-- End Footer -->
+</section>
+
+<script>
+	
+let profiles = [
+  {
+    name: "Marcus",
+    email: "susilkyan1@gmail.com",
+    profileImgUrl: "/assets/img/profile.webp",
+    likes: 10
+  },
+  {
+    name: "Su Su",
+    email: "susu1@gmail.com",
+    profileImgUrl: "/assets/img/profile.webp",
+    likes: 5
+  },
+  {
+    name: "Ma Thet Su",
+    email: "mgmg1@gmail.com",
+    profileImgUrl: "/Project Images/Food/woman.jpg",
+    likes: 8
+  },
+  {
+    name: "Mg Mg",
+    email: "mgmg1@gmail.com",
+    profileImgUrl: "/Project Images/man.jpg",
+    likes: 12
+  },
+  {
+    name: "John Doe",
+    email: "john.doe@example.com",
+    profileImgUrl: "/assets/img/profile.webp",
+    likes: 15
+  },
+  {
+    name: "Jane Smith",
+    email: "jane.smith@example.com",
+    profileImgUrl: "/assets/img/profile.webp",
+    likes: 20
+  },
+  {
+    name: "Alice Johnson",
+    email: "alice.johnson@example.com",
+    profileImgUrl: "/Project Images/Food/woman.jpg",
+    likes: 18
+  },
+  {
+    name: "Bob Brown",
+    email: "bob.brown@example.com",
+    profileImgUrl: "/Project Images/man.jpg",
+    likes: 22
+  },
+  {
+    name: "Emily Davis",
+    email: "emily.davis@example.com",
+    profileImgUrl: "/assets/img/profile.webp",
+    likes: 17
+  },
+  {
+    name: "Michael Wilson",
+    email: "michael.wilson@example.com",
+    profileImgUrl: "/assets/img/profile.webp",
+    likes: 13
+  }
+];
+
+
+profiles.sort((a, b) => b.likes - a.likes);
+
+
+let container = document.querySelector('.fav-pic-flexs');
+
+
+for (let i = 0; i < Math.min(profiles.length, 4); i++) {
+  let profile = profiles[i];
+
+  let profileDiv = document.createElement('div');
+  profileDiv.classList.add('profile-pic-flex');
+
+  let profileImgDiv = document.createElement('div');
+  let profileImg = document.createElement('img');
+  profileImg.classList.add('profile-img');
+  profileImg.setAttribute('src', profile.profileImgUrl);
+  profileImgDiv.appendChild(profileImg);
+
+  let profileInfoDiv = document.createElement('div');
+  let profileNameLink = document.createElement('a');
+  profileNameLink.setAttribute('href', 'author.html');
+  profileNameLink.textContent = profile.name;
+  let hiddenEmail = document.createElement('p');
+  hiddenEmail.classList.add('hidden-email');
+  hiddenEmail.style.display = 'none';
+  hiddenEmail.textContent = profile.email;
+  let emailsP = document.createElement('p');
+  emailsP.classList.add('emails');
+  emailsP.textContent = `Likes: ${profile.likes}`;
+
+
+  profileInfoDiv.appendChild(profileNameLink);
+  profileInfoDiv.appendChild(document.createElement('br'));
+  profileInfoDiv.appendChild(hiddenEmail);
+  profileInfoDiv.appendChild(emailsP);
+
+  profileDiv.appendChild(profileImgDiv);
+  profileDiv.appendChild(profileInfoDiv);
+
+  container.appendChild(profileDiv);
+}
+
+</script>
+
+	<script>
+		function obfuscateEmail(email) {
+			const parts = email.split('@');
+			const localPart = parts[0];
+			const domainPart = '@' + parts[1];
+			const visiblePart = localPart.substring(0, 2);
+			const obfuscatedLocalPart = '.'.repeat(7); // Always display 7 dots
+			return visiblePart + obfuscatedLocalPart + domainPart;
+		}
+
+		// Get all elements with the class 'hidden-email'
+		const hiddenEmailElements = document.querySelectorAll('.hidden-email');
+
+		// Loop through each hidden email element and obfuscate the email addresses
+		hiddenEmailElements.forEach(hiddenEmailElement => {
+			const originalEmail = hiddenEmailElement.textContent;
+			const obfuscatedEmail = obfuscateEmail(originalEmail);
+
+			// Get the corresponding 'emails' element and set its text content to the obfuscated email address
+			const emailsElement = hiddenEmailElement.nextElementSibling;
+			emailsElement.textContent = obfuscatedEmail;
+		});
+	</script>
+
+
+	<script>
+		// Category
+
+		const categoryBar = document.querySelector('.category-bar-wrapper');
+		const scrollAmount = 120; // Change this value to adjust scroll amount
+		const leftArrow = document.querySelector('.arrow.left');
+		const rightArrow = document.querySelector('.arrow.right');
+
+		document.querySelector('.arrow.left').addEventListener('click', () => {
+			categoryBar.scrollLeft -= scrollAmount;
+		});
+
+		document.querySelector('.arrow.right').addEventListener('click', () => {
+			categoryBar.scrollLeft += scrollAmount;
+		});
+
+		categoryBar.addEventListener('scroll', () => {
+			const scrollLeft = categoryBar.scrollLeft;
+			const scrollWidth = categoryBar.scrollWidth;
+			const clientWidth = categoryBar.clientWidth;
+			const isAtStart = scrollLeft === 0;
+			const isAtEnd = scrollLeft + clientWidth >= scrollWidth - scrollAmount;
+
+			leftArrow.classList.toggle('hidden', isAtStart);
+			rightArrow.classList.toggle('hidden', isAtEnd);
+		});
+
+		function showContent(id) {
+			var contents = document.querySelectorAll('.cat_content_');
+			for (var i = 0; i < contents.length; i++) {
+				contents[i].style.display = 'none';
+			}
+			document.getElementById(id).style.display = 'block';
+		}
+	</script>
+
+	<script>
+		// Get all elements with class name "post-des"
+		const postDesElements = document.querySelectorAll('.post-des');
+
+		// Loop through each element
+		postDesElements.forEach(postDes => {
+			// Get the content of the current element
+			const content = postDes.textContent.trim(); // Trim whitespace
+			console.log("o");
+			// Check if content is not empty
+			if (content) {
+				// Split the content into words
+				const words = content.split(/\s+/); // Split by whitespace
+
+				// Select the first 24 words or all words if less than 24
+				const shortContent = words.slice(0, 24).join(' ');
+
+				// Update the content of the element with the first 24 words
+				postDes.innerHTML = shortContent + (words.length > 24 ? '...' : ''); // Add '...' if needed
+			}
+		});
+
+		// Get all elements with class name "timestamp"
+		const timestampElements = document.querySelectorAll('.timestamp');
+
+		// Loop through each element
+		timestampElements.forEach(timestampElement => {
+			// Get the input date and time string from the inner text of the timestamp element
+			var inputDateTimeString = timestampElement.innerText;
+
+			// Parse the input date and time string into a Date object
+			var inputDateTime = new Date(inputDateTimeString);
+
+			// Get the current timestamp in milliseconds
+			var currentTimestamp = Date.now();
+
+			// Calculate the difference in milliseconds between the current date and time and the input date and time
+			var timeDifference = currentTimestamp - inputDateTime.getTime();
+
+			// Calculate the difference in seconds, minutes, hours, and days
+			var secondsDifference = Math.floor(timeDifference / 1000);
+			var minutesDifference = Math.floor(secondsDifference / 60);
+			var hoursDifference = Math.floor(minutesDifference / 60);
+			var daysDifference = Math.floor(hoursDifference / 24);
+
+			// Define strings for different time units
+			var relativeTimeString;
+			console.log("g");
+			if (daysDifference > 5) {
+				// Format the input date and time in "month day, year" format
+				var monthNames = ["January", "February", "March", "April", "May", "June",
+					"July", "August", "September", "October", "November", "December"
+				];
+				var month = monthNames[inputDateTime.getMonth()];
+				var day = inputDateTime.getDate();
+				var year = inputDateTime.getFullYear();
+				relativeTimeString = month + ' ' + day + ', ' + year;
+			} else if (daysDifference > 0) {
+				relativeTimeString = daysDifference + " days ago";
+			} else if (hoursDifference > 0) {
+				relativeTimeString = hoursDifference + " hours ago";
+			} else if (minutesDifference > 0) {
+				relativeTimeString = minutesDifference + " minutes ago";
+			} else {
+				relativeTimeString = secondsDifference + " seconds ago";
+			}
+
+			// Update the inner HTML of the timestamp element with the calculated relative time string
+			timestampElement.innerHTML = relativeTimeString;
+		});
+
+
+		// Get all elements with class name "minRead"
+		const minReadElements = document.querySelectorAll('.minRead');
+
+		// Loop through each element
+		minReadElements.forEach(minReadElement => {
+			// Get the content of the current element
+			const content = minReadElement.innerText.trim(); // Trim whitespace
+
+			// Calculate the estimated reading time
+			const wordsPerMinute = 100; // Average reading speed (adjust as needed)
+			const wordCount = content.split(/\s+/).length; // Split content by whitespace to count words
+			const readingTimeMinutes = Math.ceil(wordCount / wordsPerMinute);
+			console.log(readingTimeMinutes);
+			// Update the inner HTML of the minRead element with the calculated reading time
+			minReadElement.innerHTML = readingTimeMinutes + " min read";
+		});
+		function getShortDescription(postContent) {
+			// Split the content into an array of words
+			const words = postContent.split(' ');
+
+			// Get the first 30 words or less if the content is shorter than 30 words
+			const shortDescription = words.slice(0, 30).join(' ');
+
+			return shortDescription;
+		}
+
+
+	</script>
+	<script>
+		// Retrieve data from local storage
+		var storedStories = localStorage.getItem("stories");
+	
+		// Check if there are stored stories in local storage
+		if (storedStories) {
+			// Parse the JSON string back to an array
+			var storiesData = JSON.parse(storedStories);
+	
+			// Access the container where you want to append the story cards
+			var storiesContainer = document.querySelector(".mmm");
+	
+			storiesData.forEach(function (story) {
+				// Create elements for the story card
+				var postFlexDiv = document.createElement("div");
+				postFlexDiv.classList.add("post-flex");
+	
+				var imageDiv = document.createElement("div");
+				var imageLink = document.createElement("a");
+				var image = document.createElement("img");
+				image.classList.add("post-img");
+				image.src = `assets/img/${story.storyImgUrl}`;
+				image.alt = "post-img";
+				imageLink.href = ""; // Set the appropriate href
+				imageLink.appendChild(image);
+				imageDiv.appendChild(imageLink);
+	
+				var allOnePostDiv = document.createElement("div");
+				allOnePostDiv.classList.add("all-one-post");
+	
+				var postTitle = document.createElement("h2");
+				var postTitleLink = document.createElement("a");
+				postTitleLink.classList.add("post-title");
+				postTitleLink.href = "post.html"; // Set the appropriate href
+				postTitleLink.textContent = story.title;
+				postTitle.appendChild(postTitleLink);
+	
+				var postDescription = document.createElement("h4");
+				postDescription.classList.add("post-des");
+				postDescription.textContent = story.description;
+	
+				allOnePostDiv.appendChild(postTitle);
+				allOnePostDiv.appendChild(postDescription);
+	
+				var favPicFlexDiv = document.createElement("div");
+				favPicFlexDiv.classList.add("fav-pic-flex");
+	
+				var profilePicFlexDiv = document.createElement("div");
+				profilePicFlexDiv.classList.add("profile-pic-flex");
+	
+				var profilePicDiv = document.createElement("div");
+				var profilePicLink = document.createElement("a");
+				profilePicLink.href = "userProfile.html"; // Set the appropriate href
+				var profilePicImg = document.createElement("img");
+				profilePicImg.classList.add("profile-img");
+				profilePicImg.src = "/Project Images/profile.jpg"; // Set the appropriate source
+				profilePicLink.appendChild(profilePicImg);
+				profilePicDiv.appendChild(profilePicLink);
+	
+				var profileDetailsDiv = document.createElement("div");
+				var profileNameLink = document.createElement("a");
+				profileNameLink.href = "userProfile.html"; // Set the appropriate href
+				
+				profileDetailsDiv.appendChild(profileNameLink);
+				profileDetailsDiv.appendChild(document.createElement("br"));
+			
+				profileDetailsDiv.innerHTML += `<i class="fa-solid fa-earth-americas" style="color: rgb(174, 164, 164);"></i> <span class="timestamp"></span>`;
+	
+				profilePicFlexDiv.appendChild(profilePicDiv);
+				profilePicFlexDiv.appendChild(profileDetailsDiv);
+	
+				var readStoryLinkDiv = document.createElement("div");
+				var readStoryLink = document.createElement("a");
+				readStoryLink.href = "post.html"; 
+				readStoryLink.title = "Read Story";
+				var bookmarkIcon = document.createElement("i");
+				bookmarkIcon.id = "bookmarkIcon";
+				bookmarkIcon.classList.add("far", "fa-bookmark", "fav_");
+				readStoryLink.appendChild(bookmarkIcon);
+				readStoryLinkDiv.appendChild(readStoryLink);
+	
+				favPicFlexDiv.appendChild(profilePicFlexDiv);
+				favPicFlexDiv.appendChild(readStoryLinkDiv);
+	
+				allOnePostDiv.appendChild(favPicFlexDiv);
+	
+				postFlexDiv.appendChild(imageDiv);
+				postFlexDiv.appendChild(allOnePostDiv);
+	
+				storiesContainer.appendChild(postFlexDiv);
+				
+			});
+		} else {
+			console.log("No stories found in local storage.");
+		}
+	</script>
+	<script src="https://kit.fontawesome.com/b18399b997.js" crossorigin="anonymous"></script>
+	<script src="/assets/js/app.js"></script>
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+		integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+		crossorigin="anonymous"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

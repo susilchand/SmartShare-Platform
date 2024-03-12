@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+    <title>Create New Blog</title>
+    <link rel="stylesheet" href="/assets/css/mediumish.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+        rel="stylesheet">
+
+
+
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .page-wrapper {
+            background-color: #f0f0f0;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-heading {
+            background-color: #c1cbd2;
+            color: #000000;
+            padding: 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-row {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-row .name {
+            width: 120px;
+        }
+
+        .form-row .value {
+            width: 50px;
+            flex: 1;
+        }
+
+        .textarea--style-6 {
+            width: 75%;
+            height: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+
+        .input--style-6 {
+            height: 30px;
+            width: 75%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+
+        .category,
+        .visibility {
+            width: 79%;
+            height: 40px;
+            font-size: 15px;
+        }
+
+
+        .label--file {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .label--desc {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .preview {
+            margin-left: 10px;
+        }
+
+        .preview img {
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 5px;
+        }
+
+        .img-width {
+            width: 80%;
+        }
+
+        .card-footer {
+            text-align: center;
+        }
+        button[type="submit"]{
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid rgb(159, 152, 152);
+        }
+        button[type="submit"]:hover{
+           
+          background: rgb(164, 160, 160);
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation"
+    style="background-color: #ffffff;">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container nav-width" style="width: 100%;">
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <!-- Begin Logo -->
+    
+                <img src="assets/img/p_logo.png" alt="logo" style="width: 110px;">
+        
+            <!-- End Logo -->
+            <!-- Begin Search -->
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+                        <path
+                            d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z">
+                        </path>
+                    </svg></span>
+            </form>
+            <!-- End Search -->
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <!-- Begin Menu -->
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="createPost.html"><i class="far fa-pen-to-square write"></i>Write<span
+                            class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: rgb(23, 23, 23);" href="story.html">Our Story</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="dropdown-trigger" onclick="toggleDropdown(event)">
+                            <a class="nav-link profile-link" href="#">
+                                <script>
+                                    <!-- Check if user is logged in -->
+                                    function getCookie(cookieName) {
+                                        const cookies = document.cookie.split(';');
+                                        for (let i = 0; i < cookies.length; i++) {
+                                            const cookie = cookies[i].trim(); console.log("Cookie:", cookie); if
+                                                (cookie.startsWith(cookieName + '=')) {
+                                                    return
+                                                decodeURIComponent(cookie.substring(cookieName.length + 1));
+                                            }
+                                        } return null;
+                                    }
+                                    const profileImage = getCookie("profileImage"); 
+                                    console.log(profileImage)
+                                    if (profileImage) { 
+                                        document.write(`<img
+                                    class="profile__" src="${profileImage}" alt="profile">`);
+                                    } else {
+                                    
+                                        document.write(`<img class="profile__" src="/assets/img/profile.webp"
+                                        alt="profile">`);
+                                    }
+                                </script>
+                            </a>
+                        </button>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <a class="signin" href="profile.html">Profile</a>
+                            <a class="signup" href="index.html">Log Out</a>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+
+            <!-- End Menu -->
+
+        </div>
+    </div>
+</nav>
+    <div class="page-wrapper bg-dark p-t-100 p-b-50">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-6">
+                <div class="card-heading">
+                    <h2 class="title">Create New Blog</h2>
+                </div>
+                <div class="card-body">
+                    <form enctype="multipart/form-data" id="storyForm">
+                        <div class="form-row">
+                            <div class="name">Category</div>
+                            <div class="value">
+                                <select id="category" class="input--style-6 category">
+                                    <option value="Psychology">Psychology</option>
+                                    <option value="Food">Food</option>
+                                    <option value="Business">Business</option>
+                                    <option value="Programming">Programming</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Health">Health</option>
+                                    <option value="Media">Media</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Title</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input id="title" class="input--style-6" type="text" name="Title" placeholder="Type the title of your blog here" required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Content</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <textarea id="description" class="textarea--style-6" name="Body" placeholder="Type the body of your blog here"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Visibility</div>
+                            <div class="value">
+                                <select id="visibility" class="input--style-6 visibility">
+                                    <option value="public">Public</option>
+                                    <option value="private">Private</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row img-width">
+                            <div class="name">Upload Image</div>
+                            <div class="value">
+                                <div class="input-group js-input-file">
+                                    <input class="input-file" type="file" id="storyImgUrl" >
+                                </div>
+                            </div>
+                            <div class="preview">
+                                <img src="/assets/img/choosePhoto.png" id="previewPhoto" size="50">
+                            </div>
+                        </div>
+                        <div class="card-footer"style="border:none; background-color: transparent; ">
+                            <button class="btn btn--radius-2 btn--blue-2" type="submit" id="submit">Post Blog</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+     document.getElementById("storyForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get form values
+    var title = document.getElementById("title").value;
+    var description = document.getElementById("description").value;
+    var author = "Your Author Value"; // You can set this value as needed
+    var storyImgUrl = document.getElementById("storyImgUrl").value;
+    var category = document.getElementById("category").value;
+
+    // Remove "C:\fakepath\" prefix from storyImgUrl
+    storyImgUrl = storyImgUrl.replace(/^.*[\\\/]/, '');
+
+    // Create an object to store form values
+    var story = {
+        id: generatePostId(), // Generate a unique post ID
+        title: title,
+        description: description,
+      
+        storyImgUrl: storyImgUrl,
+        category: category,
+    };
+
+    // Get existing stories from localStorage or initialize an empty array
+    var existingStories = JSON.parse(localStorage.getItem("stories")) || [];
+
+    // Add the new story to the existing stories array
+    existingStories.push(story);
+
+    // Store the updated stories array back to localStorage
+    localStorage.setItem("stories", JSON.stringify(existingStories));
+
+    // Clear the form after submission
+    document.getElementById("storyForm").reset();
+
+    // Optionally, you can provide feedback to the user that the story has been created
+    alert("Story created successfully!");
+});
+
+// Function to generate a unique post ID
+function generatePostId() {
+    return Date.now() + Math.floor(Math.random() * 1000); // Current timestamp + random number
+}
+
+// Preview image functionality
+const img = document.getElementById('previewPhoto');
+const file = document.getElementById('storyImgUrl');
+
+file.addEventListener('change', function () {
+    const choosedFile = this.files[0];
+    if (choosedFile) {
+        const reader = new FileReader();
+
+        reader.addEventListener('load', function () {
+            img.setAttribute('src', reader.result);
+        });
+        reader.readAsDataURL(choosedFile);
+
+        // Remove "C:\fakepath\" prefix
+        const cleanedFileName = this.value.replace(/^.*[\\\/]/, '');
+        console.log(cleanedFileName); // Log the cleaned file name without the prefix
+    }
+});
+
+    </script>
+<script>
+    // Function to show content based on clicked navigation item
+    function showContent(contentId) {
+        // Hide all content sections
+        var contentSections = document.querySelectorAll('.content-section');
+        contentSections.forEach(function (section) {
+            section.style.display = 'none';
+        });
+
+        // Show the selected content section
+        var selectedContent = document.getElementById(contentId);
+        selectedContent.style.display = 'block';
+    }
+
+    // Add click event listeners to navigation items
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('home').addEventListener('click',
+            function () {
+                showContent('home-content');
+            });
+
+        document.getElementById('saved').addEventListener('click',
+            function () {
+                showContent('saved-content');
+            });
+
+        document.getElementById('about').addEventListener('click',
+            function () {
+                showContent('about-content');
+            });
+    });
+</script>
+<script>
+    // Get all elements with class name "post-des"
+    const postDesElements = document.querySelectorAll('.post-des');
+
+    // Loop through each element
+    postDesElements.forEach(postDes => {
+        // Get the content of the current element
+        const content = postDes.textContent.trim(); // Trim whitespace
+        console.log("o");
+        // Check if content is not empty
+        if (content) {
+            // Split the content into words
+            const words = content.split(/\s+/); // Split by whitespace
+
+            // Select the first 24 words or all words if less than 24
+            const shortContent = words.slice(0, 24).join(' ');
+
+            // Update the content of the element with the first 24 words
+            postDes.innerHTML = shortContent + (words.length > 24 ? '...' : ''); // Add '...' if needed
+        }
+    });
+
+    // Get all elements with class name "timestamp"
+    const timestampElements = document.querySelectorAll('.timestamp');
+
+    // Loop through each element
+    timestampElements.forEach(timestampElement => {
+        // Get the input date and time string from the inner text of the timestamp element
+        var inputDateTimeString = timestampElement.innerText;
+
+        // Parse the input date and time string into a Date object
+        var inputDateTime = new Date(inputDateTimeString);
+
+        // Get the current timestamp in milliseconds
+        var currentTimestamp = Date.now();
+
+        // Calculate the difference in milliseconds between the current date and time and the input date and time
+        var timeDifference = currentTimestamp - inputDateTime.getTime();
+
+        // Calculate the difference in seconds, minutes, hours, and days
+        var secondsDifference = Math.floor(timeDifference / 1000);
+        var minutesDifference = Math.floor(secondsDifference / 60);
+        var hoursDifference = Math.floor(minutesDifference / 60);
+        var daysDifference = Math.floor(hoursDifference / 24);
+
+        // Define strings for different time units
+        var relativeTimeString;
+        console.log("g");
+        if (daysDifference > 5) {
+            // Format the input date and time in "month day, year" format
+            var monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            var month = monthNames[inputDateTime.getMonth()];
+            var day = inputDateTime.getDate();
+            var year = inputDateTime.getFullYear();
+            relativeTimeString = month + ' ' + day + ', ' + year;
+        } else if (daysDifference > 0) {
+            relativeTimeString = daysDifference + " days ago";
+        } else if (hoursDifference > 0) {
+            relativeTimeString = hoursDifference + " hours ago";
+        } else if (minutesDifference > 0) {
+            relativeTimeString = minutesDifference + " minutes ago";
+        } else {
+            relativeTimeString = secondsDifference + " seconds ago";
+        }
+
+        // Update the inner HTML of the timestamp element with the calculated relative time string
+        timestampElement.innerHTML = relativeTimeString;
+    });
+
+
+    // Get all elements with class name "minRead"
+    const minReadElements = document.querySelectorAll('.minRead');
+
+    // Loop through each element
+    minReadElements.forEach(minReadElement => {
+        // Get the content of the current element
+        const content = minReadElement.innerText.trim(); // Trim whitespace
+
+        // Calculate the estimated reading time
+        const wordsPerMinute = 100; // Average reading speed (adjust as needed)
+        const wordCount = content.split(/\s+/).length; // Split content by whitespace to count words
+        const readingTimeMinutes = Math.ceil(wordCount / wordsPerMinute);
+        console.log(readingTimeMinutes);
+        // Update the inner HTML of the minRead element with the calculated reading time
+        minReadElement.innerHTML = readingTimeMinutes + " min read";
+    });
+    function getShortDescription(postContent) {
+        // Split the content into an array of words
+        const words = postContent.split(' ');
+
+        // Get the first 30 words or less if the content is shorter than 30 words
+        const shortDescription = words.slice(0, 30).join(' ');
+
+        return shortDescription;
+    }
+
+
+</script>
+</body>
+
+</html>
